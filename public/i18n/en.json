@@ -61,5 +61,6 @@
      "invTask" : "Invalid task format! Expected an array of tasks.",
      "impLimitExd" : "Import limit exceeded! You can only import up to 100 tasks at once.",
      "inValid" : "No valid tasks found in the file!",
-     "importFailed" : "Failed to import tasks. Please try again."
+     "importFailed" : "Failed to import tasks. Please try again.",
+     "alredayAcc":"Already have an account?"
 }
