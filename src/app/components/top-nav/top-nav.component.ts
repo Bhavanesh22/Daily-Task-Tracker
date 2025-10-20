@@ -8,17 +8,19 @@ import { AuthService } from '../../services/auth.service';
 import { ToastrService } from 'ngx-toastr';
 import { UserProfile } from '../../models/interface';
 import { SupabaseService } from '../../services/supabase.service';
+import { FormsModule } from '@angular/forms';
 
 type Theme = 'blue' | 'pink' | 'purple' | 'gold';
 
 @Component({
   selector: 'app-top-nav',
-  imports: [MatIconModule, MatMenuModule, MatButtonModule],
+  imports: [MatIconModule, MatMenuModule, MatButtonModule, FormsModule],
   templateUrl: './top-nav.component.html',
   styleUrl: './top-nav.component.scss'
 })
 export class TopNavComponent implements OnInit {
   currentTheme: Theme = 'blue';
+  curLang:string='en';
 
   commonService = inject(CommonService);
   // authService = inject(AuthService);
@@ -68,5 +70,9 @@ export class TopNavComponent implements OnInit {
     document.body.className = '';
     document.body.classList.add(`theme-${theme}`);
     localStorage.setItem('theme', theme);
+  }
+
+  switchLan(){
+    this.commonService.language.next(this.curLang);
   }
 }
